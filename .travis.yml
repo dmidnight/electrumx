@@ -7,13 +7,14 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -yq libsnappy-dev zlib1g-dev libbz2-dev libgflags-dev liblz4-dev librocksdb-dev libleveldb-dev
 python:
-  - "3.7-dev"
+  - "3.8-dev"
+  - "3.8"
+  - "3.7"
   - "nightly"
 # command to install dependencies
 install:
   - pip install aiohttp
   - pip install aiorpcX
-  - pip install ecdsa
   - pip install plyvel
   - pip install pycodestyle
   - pip install pylru
@@ -21,25 +22,6 @@ install:
   - pip install pytest-asyncio
   - pip install pytest-cov
   - pip install Sphinx
-# hashes
-  - pip install tribushashm
-  - pip install blake256
-  - pip install scrypt
-  - pip install x11_hash
-  - pip install git+https://github.com/bitcoinplusorg/x13-hash
-  - pip install xevan_hash
-  - pip install quark_hash
-  - pip install groestlcoin_hash
-  - pip install neoscrypt
-  - pip install x16r_hash
-  - pip install pycryptodomex
-  - pip install git+https://github.com/Electra-project/nist5_hash
-  - pip install git+https://github.com/RitoProject/x21s_hash
-  - pip install x16rv2_hash
-  - pip install git+https://github.com/VerusCoin/verushashpy
-  - pip install bell-yespower
-  - pip install cpupower
-  - pip install kawpow
 # command to run tests
 script:
   - pytest --cov=electrumx
